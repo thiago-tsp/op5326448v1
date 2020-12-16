@@ -66,8 +66,6 @@ public class Op5326448v1 {
         
         lista.addAll(preencherLista(dao.listarInformacoes(requisicao.getCodigoCliente())));
         
-        resposta.setQuantidadeOcorrenciaCliente(lista.size());
-        
         return resposta;
     }
     

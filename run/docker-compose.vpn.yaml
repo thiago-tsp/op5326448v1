@@ -10,7 +10,7 @@ services:
     # command: "./mvnw compile quarkus:dev -Ddebug=8000 -gs /usr/share/java/maven-3/conf/settings.xml"
     build:
       context: ../
-      dockerfile: ./Dockerfile.vpn.dev 
+      dockerfile: ./Dockerfile.dev 
       args:
         - DB2_USER=$DB2_USER
         - DB2_PASSWORD=$DB2_PASSWORD

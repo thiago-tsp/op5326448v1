@@ -1,11 +1,10 @@
 package br.com.bb.rtc.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
-
-import com.ibm.db2.cmx.annotation.Column;
-import com.ibm.db2.cmx.annotation.Id;
 
 @Entity
 @NamedNativeQueries({
@@ -44,17 +43,17 @@ import com.ibm.db2.cmx.annotation.Id;
 })
 public class Cliente {
 	
-	@Column(name="A.NR_ORD_NVL_IDCO")
+	@Column(name="NR_ORD_NVL_IDCO")
 	private Integer numeroOrdemNivelIndicio;	
 	
 	@Id
-	@Column(name="A.CD_IDCO_PDA_CLI")
+	@Column(name="CD_IDCO_PDA_CLI")
 	private Integer codigoIndicioPerdaCliente;
 	
-	@Column(name="A.CD_CAS_PDA_MGCT")
+	@Column(name="CD_CAS_PDA_MGCT")
 	private Integer codigoCausaPerdaMargemContribuicao;
 	
-	@Column(name="A.NM_EVT_PDA_MGCT")
+	@Column(name="NM_EVT_PDA_MGCT")
 	private String nomeEventoPerdaMargemContribuicao;
 	
 	public Cliente() {
