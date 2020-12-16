@@ -18,6 +18,7 @@ public class Op5326448v1Test {
     public void testOp5326448v1() {
 
         DadosRequisicaoListarInformacoesCliente requisicao = new DadosRequisicaoListarInformacoesCliente();
+        requisicao.setCodigoCliente(355);        
 
         //Preencher o objeto de requisicao
 
@@ -27,9 +28,23 @@ public class Op5326448v1Test {
             .when()
             .post("/op5326448v1")
             .then()
-            // Colocar os campos de resposta com os valores esperados exemplo
-            // Nome do Campo: textoDado , Resposta : "Requiscao Entrada - Resposta Processada"
-            //.body("textoDado",is("Requiscao Entrada - Resposta Processada"))
             .statusCode(200);
+    }
+    
+    @Test
+    public void testOp5326448v1Zerado() {
+
+        DadosRequisicaoListarInformacoesCliente requisicao = new DadosRequisicaoListarInformacoesCliente();
+        requisicao.setCodigoCliente(0);        
+
+        //Preencher o objeto de requisicao
+
+        given()
+            .contentType(ContentType.JSON)
+            .body(requisicao)
+            .when()
+            .post("/op5326448v1")
+            .then()
+            .statusCode(422);
     }
 }

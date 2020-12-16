@@ -12,7 +12,7 @@ public enum ErrosSistema implements IEnumErro {
     INFORME_DATA_NASCIMENTO("001","Informe a data de nascimento"),
     ERRO_EXCLUSAO_USUARIO("002","Não foi possivel excluir o usuario do identificador.",ChavesMonitoradasSistema.class),
     ERRO_INCLUSAO_USUARIO("003","O usuario deve ter mais que %s anos.", ChavesMonitoradasSistema.class),
-    INFORME_CODIGO_CLIENTE("004", "Codigo do cliente não informado.", ChavesMonitoradasSistema.class),
+    INFORME_CODIGO_CLIENTE("005", "Codigo do cliente não informado.", ChavesMonitoradasSistema.class),
     TEXTO_ENTRADA_NAO_INFORMADO("004", "Texto de entrada nao foi informado",ChavesMonitoradasSistema.class);
 
     String codigo;
