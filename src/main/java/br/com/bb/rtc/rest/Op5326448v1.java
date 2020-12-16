@@ -2,6 +2,7 @@ package br.com.bb.rtc.rest;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -17,7 +18,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.opentracing.Traced;
 
-import antlr.collections.List;
+
 import br.com.bb.dev.ext.exceptions.ErroNegocialException;
 import br.com.bb.rtc.dao.ClienteDao;
 import br.com.bb.rtc.exceptions.ErrosSistema;
@@ -65,6 +66,8 @@ public class Op5326448v1 {
         ArrayList<ListaOcorrenciaCliente> lista = new ArrayList<ListaOcorrenciaCliente>();
         
         lista.addAll(preencherLista(dao.listarInformacoes(requisicao.getCodigoCliente())));
+        resposta.setListaOcorrenciaCliente(lista);
+        resposta.setQuantidadeOcorrenciaCliente(lista.size());
         
         return resposta;
     }
